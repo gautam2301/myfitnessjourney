@@ -1,0 +1,142 @@
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; 
+    color: white;
+    font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+}
+
+
+
+body::before {
+    content: "";
+    position: fixed; /* Ensures background remains fixed */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('pexels-victorfreitas-841130.jpg');
+    background-size: cover; /* Ensures full coverage */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps it fixed while scrolling */
+    filter: blur(8px);
+    z-index: -1;
+}
+
+
+header h1{
+    font-size: 70px;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 40px;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+section h2{
+    font-size: 30px;
+}
+section p{
+    font-size: 15px;
+}
+section button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+section button {
+    border: 1.5px solid white;
+    border-radius: 8px;
+    color: white;
+    background: transparent;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    padding: 15px 30px;
+    width: 18%;
+}
+
+section button {
+    width: 18%; /* Default for larger screens */
+    min-width: 120px; /* Ensures it doesn’t get too small */
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+    section button {
+        width: 60%; /* Expands width on smaller screens */
+    }
+    header h1 {
+        font-size: 40px; /* Decrease heading size */
+    }
+    section h2 {
+        font-size: 24px;
+    }
+}
+
+
+
+/* ✅ Keep your existing CSS here */
+
+/* ✅ New Mobile-Friendly Fixes */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    section h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+    section p {
+        font-size: 14px;
+        text-align: center;
+    }
+    section button {
+        width: 60%;
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+}
+
+/* ✅ Background Image Fix for Ultra-Small Screens */
+@media (max-width: 480px) {
+    body::before {
+        background-size: contain;
+    }
+}
+
+/* ✅ Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+@media (max-width: 480px) {
+    body::before {
+        width: 100vw;  /* Ensures full viewport width */
+        height: 100vh; /* Ensures full viewport height */
+        background-size: cover; /* Prevents white space */
+    }
+}
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+
+
+
+
