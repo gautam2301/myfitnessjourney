@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>my-fitness-website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-        </style>
-</head>
-<body>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </nav>
+    
     <header>
-        <h1>Welcome To My Fitness Journey</h1>
+      <h1>Welcome To My Fitness Journey</h1>
     </header>
-    
+
     <section class="hero">
-        <h2>Transform Your Body & Mind</h2>
-        <p>Come along on my fitness journey, Let’s crush goals, build strength, and stay motivated together!</p>
-        <button class="cta">Get Started</button>
+      <h2>Transform Your Body & Mind</h2>
+      <p>
+        Come along on my fitness journey, Let’s crush goals, build strength, and
+        stay motivated together!
+      </p>
+
+      <button class="cta" onclick="fadeOutAndRedirect()">Get Started</button>
     </section>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
