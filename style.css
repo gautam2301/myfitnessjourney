@@ -1,10 +1,13 @@
-
+html, body {
+    overflow-y: auto; /* Enables vertical scrolling */
+    scroll-behavior: smooth;
+}
 body {
     position: relative;
     margin: 0;
     padding: 0;
-    height: 100vh;
-    overflow: hidden; 
+    min-height: 100vh;
+    overflow-x: hidden; 
     color: white;
     font-family: "Manrope", sans-serif;
     text-transform: uppercase;
@@ -24,7 +27,7 @@ body::before {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps it fixed while scrolling */
-    filter: blur(8px);
+    filter: blur(5px);
     z-index: -1;
 }
 
@@ -54,22 +57,24 @@ section h2{
 section p{
     font-size: 15px;
 }
-section button:hover{
+section  button:hover{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     background: rgba(255, 255, 255, 0.2);
     color: white;
 }
 
-section button {
+section  button {
     border: 1.5px solid white;
-    border-radius: 8px;
     color: white;
     background: transparent;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
     cursor: pointer;
-    padding: 15px 30px;
     width: 18%;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 5px;
 }
+
 
 section button {
     width: 18%; /* Default for larger screens */
@@ -78,7 +83,7 @@ section button {
 
 /* Adjust for mobile screens */
 @media (max-width: 768px) {
-    section button {
+    section  button {
         width: 60%; /* Expands width on smaller screens */
     }
     header h1 {
@@ -134,6 +139,213 @@ html {
 }
 html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+/* Fade Out Effect */
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    padding: 20px 0px;
+    background: transparent; /* Semi-transparent background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f8b400; /* Highlight color */
+}
+
+/* Mobile Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.contact-section{
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 600px;
+    margin: auto;
+    color: white;
+    
+
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#form-status {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+
+
+
+
+/* .thank-you-container {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 600px;
+    margin: auto;
+    color: white;
+}
+
+.thank-you-container h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.thank-you-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    background: #f8b400;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e69a00;
+} */
+
+
+.about-section {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 800px;
+    margin: auto;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    
+}
+
+.about-container h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.about-container p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    transition: 0.3s;
+    border-radius: 5px;
+    font-size: 18px;
+    background: transparent;
+    text-decoration: none;
+    color: white;
+    border: 1.5px solid white;
+    cursor: pointer;
+    border: 1.5px solid white;
+    
+}
+
+.btn:hover {
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.content{
+    font-size: 4px;
 }
 
 
